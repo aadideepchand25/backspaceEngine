@@ -32,6 +32,7 @@ if($func != null) {
   }
 }
 
+//Function disabled in actual server to avoid unauthorised users pushing files
 function addToDatabase($key, $value) {
   $temp = fopen("./scenes/" . $key . ".bef", "a");
   fwrite($temp,$value);
