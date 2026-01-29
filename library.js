@@ -1,3 +1,4 @@
+const BACKEND_URL = "https://backspaceengineserver.fwh.is"
 let display = document.getElementById("display");
 let fpsCounter = document.getElementById("fpsCounter");
 let ctx = display.getContext('2d');
@@ -402,7 +403,7 @@ function saveScene() {
 }
 function deleteScene() {
   let input = document.getElementById("deleteInput").value;
-  fetch("https://ac3f8a8e-1d1e-4821-a40c-bbd6f1f20783-00-3q4wiabw8fpnv.janeway.replit.dev?func=2&scene="+input, {mode: 'cors'}) 
+  fetch(BACKEND_URL+"?func=2&scene="+input, {mode: 'cors'}) 
     .then(response => {
       if (response.ok) return response.text();
       throw new Error('Network response was not ok.')
@@ -427,7 +428,7 @@ function clearScene() {
 
 function sendData(data, index, sceneName) {
   if(index < data.length-1) {
-    fetch("https://ac3f8a8e-1d1e-4821-a40c-bbd6f1f20783-00-3q4wiabw8fpnv.janeway.replit.dev?func=1&scene="+sceneName+"&data="+data[index], {mode: 'cors'}) 
+    fetch(BACKEND_URL+"?func=1&scene="+sceneName+"&data="+data[index], {mode: 'cors'}) 
       .then(response => {
         if (response.ok) return response.text();
         throw new Error('Network response was not ok.')
@@ -437,7 +438,7 @@ function sendData(data, index, sceneName) {
         sendData(data, index+1, sceneName);
       }); 
   } else {
-    fetch("https://ac3f8a8e-1d1e-4821-a40c-bbd6f1f20783-00-3q4wiabw8fpnv.janeway.replit.dev?func=1&scene="+sceneName+"&data="+data[index], {mode: 'cors'}) 
+    fetch(BACKEND_URL+"?func=1&scene="+sceneName+"&data="+data[index], {mode: 'cors'}) 
       .then(response => {
         if (response.ok) return response.text();
         throw new Error('Network response was not ok.')
@@ -450,7 +451,7 @@ function sendData(data, index, sceneName) {
 }
 
 function getAllScenes() {
-  fetch("https://ac3f8a8e-1d1e-4821-a40c-bbd6f1f20783-00-3q4wiabw8fpnv.janeway.replit.dev?func=3", {mode: 'cors'}) 
+  fetch(BACKEND_URL+"?func=3", {mode: 'cors'}) 
     .then(response => {
       if (response.ok) return response.text();
       throw new Error('Network response was not ok.')
