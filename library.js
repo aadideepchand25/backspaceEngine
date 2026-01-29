@@ -364,7 +364,7 @@ function exportData(sceneName) {
 }
 
 function fetchData(sceneName) {
-  fetch("https://ac3f8a8e-1d1e-4821-a40c-bbd6f1f20783-00-3q4wiabw8fpnv.janeway.replit.dev?func=0&scene="+sceneName, {mode: 'cors'}) 
+  fetch(BACKEND_URL+"?func=0&scene="+sceneName, {mode: 'cors'}) 
     .then(response => {
       if (response.ok) return response.text();
       throw new Error('Network response was not ok.')
