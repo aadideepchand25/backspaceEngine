@@ -1,0 +1,48 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+
+#display {
+  float: left;
+}
+
+#parent {
+  display: flex;
+  width: 100%;
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+#inputFile {
+  margin-top: 10px;
+}
+
+/*tr:nth-child(even) {
+  background-color: #dddddd;
+}*/
+
+tr:nth-child {
+  align-items: center;
+  text-align-last: center;
+  text-align: center;
+}
+
+#dButton {
+  width: 100%;
+  border: none; 
+  border-radius: 2px;
+}
+
+.inputP {
+  width: 95%;
+}
