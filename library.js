@@ -1,4 +1,4 @@
-const BACKEND_URL = "https://backspaceengineserver.fwh.is"
+const BACKEND_URL = "https://backspaceengineserver.onrender.com/"
 let display = document.getElementById("display");
 let fpsCounter = document.getElementById("fpsCounter");
 let ctx = display.getContext('2d');
